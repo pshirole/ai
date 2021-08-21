@@ -29,7 +29,7 @@ $dt-green-light: rgb(172, 229, 145);
 }
 
 .language-python + .language-plaintext code { background-color: #1e1e1e !important; } // original: { background-color: white !important; }
-.language-python + .language-plaintext pre  { background-color: white !important; }
+.language-python + .language-plaintext pre  { background-color: #1e1e1e !important; }  // original: { background-color: white !important; }
 
 // for Jupyter Notebook HTML Code Cells modified from https://www.fast.ai/public/css/hyde.css
 
