@@ -2088,7 +2088,9 @@ Name: horsepower, dtype: float64
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Text(0.5, 1.0, 'horsepower bins')
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_40_1.png"></p>
+<!-- <img src="/assets/img/dataAnalysisWithPython/output_40_1.png"> -->
+
+<p><img src="/ai/images/dataAnalysisWithPython/output_40_1.png" alt=""></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s">'horsepower'</span><span class="p">]),</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s">'horsepower'</span><span class="p">]),</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">bins</span>
@@ -2208,7 +2210,7 @@ Name: horsepower-binned, dtype: int64
 
 <!-- 
 <img src = "/assets/img/dataAnalysisWithPython/output_45_1.png"> -->
-<p><img src="/ai/assets/img/dataAnalysisWithPython/output_45_1.png%22" alt=""></p>
+<p><img src="/ai/images/dataAnalysisWithPython/output_45_1.png%22" alt=""></p>
 
 <h4 id="bins-visualization">
 <a class="anchor" href="#bins-visualization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bins Visualization</h4>
@@ -2232,7 +2234,8 @@ Name: horsepower-binned, dtype: int64
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Text(0.5, 1.0, 'horsepower bins')
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_47_1.png"></p>
+<!-- <img src = "/assets/img/dataAnalysisWithPython/output_47_1.png"> -->
+<p><img src="/ai/images/dataAnalysisWithPython/output_47_1.png%22" alt=""></p>
 
 <h4 id="indicator-variable-or-dummy-variable">
 <a class="anchor" href="#indicator-variable-or-dummy-variable" aria-hidden="true"><span class="octicon octicon-link"></span></a>Indicator variable (or dummy variable)</h4>
@@ -3229,7 +3232,8 @@ Name: horsepower-binned, dtype: int64
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(0, 53229.620270856)
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_66_1.png"></p>
+<p><img src="/ai/images/dataAnalysisWithPython/output_66_1.png%22" alt="">
+<!-- <img src = "/assets/img/dataAnalysisWithPython/output_66_1.png"> --></p>
 
 <p>As the engine-size goes up, the price goes up: this indicates a positive direct correlation between these two variables. Engine size seems like a pretty good predictor of price since the regression line is almost a perfect diagonal line.</p>
 
@@ -3327,7 +3331,8 @@ Name: horsepower-binned, dtype: int64
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d19ad7bef0&gt;
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_72_1.png"></p>
+<p><img src="/ai/images/dataAnalysisWithPython/output_72_1.png%22" alt="">
+<!-- <img src = "/assets/img/dataAnalysisWithPython/output_72_1.png"> --></p>
 
 <p>Peak rpm does not seem like a good predictor of the price at all since the regression line is close to horizontal. Also, the data points are very scattered and far from the fitted line, showing lots of variability. Therefore it’s it is not a reliable variable.</p>
 
@@ -3383,7 +3388,8 @@ Name: horsepower-binned, dtype: int64
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d19bfe7c88&gt;
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_76_1.png"></p>
+<p><img src="/ai/images/dataAnalysisWithPython/output_76_1.png%22" alt="">
+<!-- <img src = "/assets/img/dataAnalysisWithPython/output_76_1.png"> --></p>
 
 <p>We see that the distributions of price between the different body-style categories have a significant overlap, and so body-style would not be a good predictor of price.</p>
 
@@ -3394,7 +3400,8 @@ Name: horsepower-binned, dtype: int64
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d19c0b2320&gt;
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_78_1.png"></p>
+<p><img src="/ai/images/dataAnalysisWithPython/output_78_1.png%22" alt="">
+<!-- <img src = "/assets/img/dataAnalysisWithPython/output_78_1.png"> --></p>
 
 <p>We see that the distribution of price between these two engine-location categories, front and rear, are distinct enough to take engine-location as a potential good predictor of price.</p>
 
@@ -3405,7 +3412,8 @@ Name: horsepower-binned, dtype: int64
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d19c125f98&gt;
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_80_1.png"></p>
+<p><img src="/ai/images/dataAnalysisWithPython/output_80_1.png%22" alt="">
+<!-- <img src = "/assets/img/dataAnalysisWithPython/output_80_1.png"> --></p>
 
 <p>We see that the distribution of price between the different drive-wheels categories differs; as such, drive-wheels could potentially be a predictor of price.</p>
 
@@ -4315,7 +4323,8 @@ Name: drive-wheels, dtype: int64
 <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_105_0.png"></p>
+<p><img src="/ai/images/dataAnalysisWithPython/output_105_0.png%22" alt="">
+<!-- <img src = "/assets/img/dataAnalysisWithPython/output_105_0.png"> --></p>
 
 <p>The heatmap plots the target variable (price) proportional to colour with respect to the variables ‘drive-wheel’ and ‘body-style’ in the vertical and horizontal axis respectively. This allows us to visualize how the price is related to ‘drive-wheel’ and ‘body-style’.</p>
 
@@ -4341,7 +4350,8 @@ Name: drive-wheels, dtype: int64
 <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_107_0.png"></p>
+<p><img src="/ai/images/dataAnalysisWithPython/output_107_0.png%22" alt="">
+<!-- <img src = "/assets/img/dataAnalysisWithPython/output_107_0.png"> --></p>
 
 <h3 id="correlation-and-causation">
 <a class="anchor" href="#correlation-and-causation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Correlation and Causation</h3>
@@ -5620,7 +5630,8 @@ Price = 38201.31 + 1.498 * normalized-losses - 820.45 * highway-mpg</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(0, 48163.464897503036)
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_176_1.png"></p>
+<p><img src="/ai/images/dataAnalysisWithPython/output_176_1.png%22" alt="">
+<!-- <img src = "/assets/img/dataAnalysisWithPython/output_176_1.png"> --></p>
 
 <p>We can see from this plot that price is negatively correlated to highway-mpg, since the regression slope is negative. One thing to keep in mind when looking at a regression plot is to pay attention to how scattered the data points are around the regression line. This will give you a good indication of the variance of the data, and whether a linear model would be the best fit or not. If the data is too far off from the line, this linear model might not be the best model for this data.</p>
 
@@ -5633,7 +5644,8 @@ Price = 38201.31 + 1.498 * normalized-losses - 820.45 * highway-mpg</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(0, 47414.10667770421)
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_178_1.png"></p>
+<p><img src="/ai/images/dataAnalysisWithPython/output_178_1.png%22" alt="">
+<!-- <img src = "/assets/img/dataAnalysisWithPython/output_178_1.png"> --></p>
 
 <p>Comparing the regression plot of “peak-rpm” and “highway-mpg” we see that the points for “highway-mpg” are much closer to the generated line and on the average decrease. The points for “peak-rpm” have more spread around the predicted line, and it is much harder to determine if the points are decreasing or increasing as the “highway-mpg” increases.</p>
 
@@ -5710,7 +5722,8 @@ Price = 38201.31 + 1.498 * normalized-losses - 820.45 * highway-mpg</p>
 <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_183_0.png"></p>
+<p><img src="/ai/images/dataAnalysisWithPython/output_183_0.png%22" alt="">
+<!-- <img src = "/assets/img/dataAnalysisWithPython/output_183_0.png"> --></p>
 
 <p>We can see from this residual plot that the residuals are not randomly spread around the x-axis, which leads us to believe that maybe a non-linear model is more appropriate for this data.</p>
 
@@ -5747,7 +5760,8 @@ One way to look at the fit of the model is by looking at the distribution plot. 
 <span class="n">plt</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_189_0.png"></p>
+<p><img src="/ai/images/dataAnalysisWithPython/output_189_0.png%22" alt="">
+<!-- <img src = "/assets/img/dataAnalysisWithPython/output_189_0.png"> --></p>
 
 <p>We can see that the fitted values are reasonably close to the actual values, since the two distributions overlap a bit. However, there is definitely some room for improvement.</p>
 
@@ -5807,7 +5821,8 @@ We get non-linear relationships by squaring or setting higher-order terms of the
 </span><span class="n">PlotPolly</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">'highway-mpg'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_195_0.png"></p>
+<p><img src="/ai/images/dataAnalysisWithPython/output_195_0.png%22" alt="">
+<!-- <img src = "/assets/img/dataAnalysisWithPython/output_195_0.png"> --></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </code></pre></div></div>
@@ -5832,7 +5847,8 @@ We get non-linear relationships by squaring or setting higher-order terms of the
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PlotPolly</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">'highway-mpg'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_199_0.png"></p>
+<p><img src="/ai/images/dataAnalysisWithPython/output_199_0.png%22" alt="">
+<!-- <img src = "/assets/img/dataAnalysisWithPython/output_199_0.png"> --></p>
 
 <p>We see that by using very high order polynomials, overfitting is observed.</p>
 
@@ -6062,7 +6078,8 @@ We get non-linear relationships by squaring or setting higher-order terms of the
 <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_234_0.png"></p>
+<p><img src="/ai/images/dataAnalysisWithPython/output_234_0.png%22" alt="">
+<!-- <img src = "/assets/img/dataAnalysisWithPython/output_234_0.png"> --></p>
 
 <h3 id="decision-making-determing-a-good-model-fit">
 <a class="anchor" href="#decision-making-determing-a-good-model-fit" aria-hidden="true"><span class="octicon octicon-link"></span></a>Decision Making: Determing a Good Model Fit</h3>
@@ -6508,7 +6525,8 @@ number of training samples:  180
 <span class="n">DistributionPlot</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_hat_train</span><span class="p">,</span> <span class="s">'Actual Values (Train)'</span><span class="p">,</span> <span class="s">'Predicted Values (Train)'</span><span class="p">,</span> <span class="n">Title</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_268_0.png"></p>
+<p><img src="/ai/images/dataAnalysisWithPython/output_268_0.png%22" alt="">
+<!-- <img src = "/assets/img/dataAnalysisWithPython/output_268_0.png"> --></p>
 
 <p>Figure 1: Plot of predicted values using the training data compared to the training data.</p>
 
@@ -6519,7 +6537,8 @@ number of training samples:  180
 <span class="n">DistributionPlot</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_hat_test</span><span class="p">,</span> <span class="s">'Actual Values (Test)'</span><span class="p">,</span> <span class="s">'Predicted Values (Test)'</span><span class="p">,</span> <span class="n">Title</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_271_0.png"></p>
+<p><img src="/ai/images/dataAnalysisWithPython/output_271_0.png%22" alt="">
+<!-- <img src = "/assets/img/dataAnalysisWithPython/output_271_0.png"> --></p>
 
 <p>Figure 2: Plot of predicted value using the test data compared to the test data.</p>
 
@@ -6582,7 +6601,8 @@ True values [ 6295. 10698. 13860. 13499.]
 </span><span class="n">PollyPlot</span><span class="p">(</span><span class="n">x_train</span><span class="p">[[</span><span class="s">'horsepower'</span><span class="p">]],</span> <span class="n">x_test</span><span class="p">[[</span><span class="s">'horsepower'</span><span class="p">]],</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">poly</span><span class="p">,</span> <span class="n">pr</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_282_0.png"></p>
+<p><img src="/ai/images/dataAnalysisWithPython/output_282_0.png%22" alt="">
+<!-- <img src = "/assets/img/dataAnalysisWithPython/output_282_0.png"> --></p>
 
 <p>Figure 3: A polynomial regression model; red dots represent training data, green dots represent test data, and the blue line represents the model prediction.</p>
 
@@ -6625,7 +6645,8 @@ True values [ 6295. 10698. 13860. 13499.]
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Text(3, 0.75, 'Maximum R^2 ')
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_289_1.png"></p>
+<p><img src="/ai/images/dataAnalysisWithPython/output_289_1.png%22" alt="">
+<!-- <img src = "/assets/img/dataAnalysisWithPython/output_289_1.png"> --></p>
 
 <p>We see the R^2 gradually increases until an order three polynomial is used. Then the R^2 dramatically decreases at four.</p>
 
@@ -6727,7 +6748,8 @@ test set: [ 6295. 10698. 13860. 13499.]
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;matplotlib.legend.Legend at 0x1d19ca7f780&gt;
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_303_1.png"></p>
+<p><img src="/ai/images/dataAnalysisWithPython/output_303_1.png%22" alt="">
+<!-- <img src = "/assets/img/dataAnalysisWithPython/output_303_1.png"> --></p>
 
 <p>Figure 6: The blue line represents the R^2 of the test data, and the red line represents the R^2 of the training data. The x-axis represents the different values of Alpha.</p>
 
