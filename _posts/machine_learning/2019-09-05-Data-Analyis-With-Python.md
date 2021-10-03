@@ -2007,7 +2007,7 @@ plt.pyplot.title("horsepower bins")
 
 <!-- <img src="/assets/img/dataAnalysisWithPython/output_40_1.png"> -->
 
-![]({{ site.baseurl }}/images/dataAnalysisWithPython/output_40_1.png)
+![]({{ https://pshirole.github.io/ai/ }}/images/dataAnalysisWithPython/output_40_1.png)
 
 
 
@@ -2155,7 +2155,7 @@ plt.pyplot.title("horsepower bins")
 
 <!-- 
 <img src = "/assets/img/dataAnalysisWithPython/output_45_1.png"> -->
-![]({{ site.baseurl }}/images/dataAnalysisWithPython/output_45_1.png")
+![]({{ site.https://pshirole.github.io/ai/ }}/images/dataAnalysisWithPython/output_45_1.png")
 
 
 #### Bins Visualization
@@ -2187,7 +2187,7 @@ plt.pyplot.title('horsepower bins')
 
 
 <!-- <img src = "/assets/img/dataAnalysisWithPython/output_47_1.png"> -->
-![]({{ site.baseurl }}/images/dataAnalysisWithPython/output_47_1.png")
+![]({{ https://pshirole.github.io/ai/ }}/images/dataAnalysisWithPython/output_47_1.png")
 
 
 #### Indicator variable (or dummy variable)
