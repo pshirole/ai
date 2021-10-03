@@ -2151,8 +2151,9 @@ plt.pyplot.title("horsepower bins")
 
 
 
-
-<img src = "/assets/img/dataAnalysisWithPython/output_45_1.png">
+<!-- 
+<img src = "/assets/img/dataAnalysisWithPython/output_45_1.png"> -->
+![]({{ site.baseurl }}/assets/img/dataAnalysisWithPython/output_45_1.png")
 
 
 #### Bins Visualization
