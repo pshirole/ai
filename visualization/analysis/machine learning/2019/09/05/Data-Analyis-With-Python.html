@@ -8,15 +8,15 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Data Analysis using Python" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="In this blog post, we will be conducting data analysis by various techniques using Python on an automobile dataset. The topics covered include data acquisition, wrangling, normalization, and visualization. We will also create a machine learning model and evaluate it." />
-<meta property="og:description" content="In this blog post, we will be conducting data analysis by various techniques using Python on an automobile dataset. The topics covered include data acquisition, wrangling, normalization, and visualization. We will also create a machine learning model and evaluate it." />
-<link rel="canonical" href="https://pshirole.github.io/ai/2019/09/05/Data-Analyis-With-Python.html" />
-<meta property="og:url" content="https://pshirole.github.io/ai/2019/09/05/Data-Analyis-With-Python.html" />
+<meta name="description" content="Data analysis of an automobile dataset using various techniques." />
+<meta property="og:description" content="Data analysis of an automobile dataset using various techniques." />
+<link rel="canonical" href="https://pshirole.github.io/ai/visualization/analysis/machine%20learning/2019/09/05/Data-Analyis-With-Python.html" />
+<meta property="og:url" content="https://pshirole.github.io/ai/visualization/analysis/machine%20learning/2019/09/05/Data-Analyis-With-Python.html" />
 <meta property="og:site_name" content="Pranav Shirole" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-09-05T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://pshirole.github.io/ai/2019/09/05/Data-Analyis-With-Python.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://pshirole.github.io/ai/2019/09/05/Data-Analyis-With-Python.html"},"headline":"Data Analysis using Python","dateModified":"2019-09-05T00:00:00-05:00","datePublished":"2019-09-05T00:00:00-05:00","description":"In this blog post, we will be conducting data analysis by various techniques using Python on an automobile dataset. The topics covered include data acquisition, wrangling, normalization, and visualization. We will also create a machine learning model and evaluate it.","@context":"https://schema.org"}</script>
+{"datePublished":"2019-09-05T00:00:00-05:00","url":"https://pshirole.github.io/ai/visualization/analysis/machine%20learning/2019/09/05/Data-Analyis-With-Python.html","@type":"BlogPosting","dateModified":"2019-09-05T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://pshirole.github.io/ai/visualization/analysis/machine%20learning/2019/09/05/Data-Analyis-With-Python.html"},"headline":"Data Analysis using Python","description":"Data analysis of an automobile dataset using various techniques.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/ai/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://pshirole.github.io/ai/feed.xml" title="Pranav Shirole" /><link rel="shortcut icon" type="image/x-icon" href="/ai/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -87,7 +87,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Data Analysis using Python</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2019-09-05T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Data Analysis using Python</h1><p class="page-description">Data analysis of an automobile dataset using various techniques.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2019-09-05T00:00:00-05:00" itemprop="datePublished">
         Sep 5, 2019
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -98,11 +98,128 @@ window.onload = wrap_img;
 </span></p>
 
     
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/ai/categories/#visualization">visualization</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/ai/categories/#analysis">analysis</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/ai/categories/#machine learning">machine learning</a>
+        
+      
+      </p>
+    
 
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>In this blog post, we will be conducting data analysis by various techniques using Python on an automobile dataset. The topics covered include data acquisition, wrangling, normalization, and visualization. We will also create a machine learning model and evaluate it.</p>
+    <ul class="section-nav">
+<li class="toc-entry toc-h4"><a href="#attribute-information">Attribute Information:</a></li>
+<li class="toc-entry toc-h2"><a href="#data-acquisition">Data Acquisition</a></li>
+<li class="toc-entry toc-h2"><a href="#data-wrangling">Data Wrangling</a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#replace-by-mean">Replace by mean</a></li>
+<li class="toc-entry toc-h5"><a href="#replace-by-frequency">Replace by Frequency</a></li>
+<li class="toc-entry toc-h5"><a href="#drop-the-whole-row">Drop the whole row</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#data-normalization">Data Normalization</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#binning">Binning</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#bins-visualization">Bins Visualization</a></li>
+<li class="toc-entry toc-h4"><a href="#indicator-variable-or-dummy-variable">Indicator variable (or dummy variable)</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#analyzing-individual-feature-patterns-using-visualization">Analyzing Individual Feature Patterns using Visualization</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#continuous-numerical-variables">Continuous numerical variables</a></li>
+<li class="toc-entry toc-h4"><a href="#correlation">Correlation</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#continuos-numerical-variables">Continuos numerical variables</a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#positive-linear-relationship">Positive Linear Relationship</a></li>
+<li class="toc-entry toc-h5"><a href="#weak-linear-relationship">Weak Linear Relationship</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#categorical-variables">Categorical variables</a></li>
+<li class="toc-entry toc-h3"><a href="#descriptive-statistical-analysis">Descriptive Statistical Analysis</a></li>
+<li class="toc-entry toc-h3"><a href="#grouping">Grouping</a></li>
+<li class="toc-entry toc-h3"><a href="#correlation-and-causation">Correlation and Causation</a></li>
+<li class="toc-entry toc-h3"><a href="#anova-analyis-of-variance">ANOVA (Analyis of Variance)</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#conclusion-important-variables">Conclusion: Important Variables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#model-development">Model Development</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#linear-regression-and-multiple-linear-regression">Linear Regression and Multiple Linear Regression</a></li>
+<li class="toc-entry toc-h3"><a href="#simple-linear-regression">Simple Linear Regression</a>
+<ul>
+<li class="toc-entry toc-h6"><a href="#how-can-highway-mpg-help-predict-the-price">How can highway-mpg help predict the price?</a></li>
+<li class="toc-entry toc-h6"><a href="#how-can-engine-size-help-predict-the-price">How can engine size help predict the price?</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#multiple-linear-regression">Multiple Linear Regression</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#model-evaluation-using-visualization">Model Evaluation using Visualization</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#regression-plot-for-simple-linear-regression">Regression Plot for Simple Linear Regression</a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#residual-plot-to-visualize-variance-of-data">Residual Plot to visualize variance of data</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#distribution-plot-for-multiple-linear-regression">Distribution Plot for Multiple Linear Regression</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#polynomial-regression-and-pipelines">Polynomial Regression and Pipelines</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#multivariate-polynomial-function">Multivariate Polynomial Function</a></li>
+<li class="toc-entry toc-h3"><a href="#pipeline">Pipeline</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#measures-for-in-sample-evaluation">Measures for In-Sample Evaluation</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#model-1-simple-linear-regression">Model 1: Simple Linear Regression</a></li>
+<li class="toc-entry toc-h3"><a href="#model-2-multiple-linear-regression">Model 2: Multiple Linear Regression</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#model-3-polynomial-fit">Model 3: Polynomial Fit</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#prediction-and-decision-making">Prediction and Decision Making</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#prediction">Prediction</a></li>
+<li class="toc-entry toc-h3"><a href="#decision-making-determing-a-good-model-fit">Decision Making: Determing a Good Model Fit</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#lets-take-a-look-at-the-values-for-the-different-models">Let’s take a look at the values for the different models.</a></li>
+<li class="toc-entry toc-h4"><a href="#simple-linear-regression-model-slr-vs-multiple-linear-regression-model-mlr">Simple Linear Regression model (SLR) vs Multiple Linear Regression model (MLR)</a></li>
+<li class="toc-entry toc-h4"><a href="#simple-linear-model-slr-vs-polynomial-fit">Simple Linear Model (SLR) vs Polynomial Fit</a></li>
+<li class="toc-entry toc-h4"><a href="#multiple-linear-regression-mlr-vs-polynomial-fit">Multiple Linear Regression (MLR) vs Polynomial Fit</a></li>
+<li class="toc-entry toc-h4"><a href="#conclusion">Conclusion:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#model-evaluation-and-refinement">Model Evaluation and Refinement</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#functions-for-plotting">Functions for Plotting</a></li>
+<li class="toc-entry toc-h3"><a href="#training-and-testing">Training and Testing</a></li>
+<li class="toc-entry toc-h3"><a href="#cross-validation-score">Cross-Validation Score</a></li>
+<li class="toc-entry toc-h3"><a href="#overfitting-underfitting-and-model-selection">Overfitting, Underfitting and Model Selection</a></li>
+<li class="toc-entry toc-h3"><a href="#overfitting">Overfitting</a></li>
+<li class="toc-entry toc-h3"><a href="#ridge-regression">Ridge Regression</a></li>
+<li class="toc-entry toc-h3"><a href="#grid-search">Grid Search</a></li>
+</ul>
+</li>
+</ul><p>In this blog post, we will be conducting data analysis by various techniques using Python on an automobile dataset. The topics covered include data acquisition, wrangling, normalization, and visualization. We will also create a machine learning model and evaluate it.</p>
 
 <p>We will be using a dataset about cars from back in 1985. This data set consists of three types of entities:</p>
 <ul>
@@ -113,7 +230,8 @@ window.onload = wrap_img;
 
 <p>The second entity corresponds to the degree to which the auto is more risky than its price indicates. Cars are initially assigned a risk factor symbol associated with its price. Then, if it is more risky (or less), this symbol is adjusted by moving it up (or down) the scale. Actuarians call this process “symboling”. A value of +3 indicates that the auto is risky, -3 that it is probably pretty safe. The third entity is the relative average loss payment per insured vehicle year. This value is normalized for all autos within a particular size classification (two-door small, station wagons, sports/specialty, etc…), and represents the average loss per car per year.</p>
 
-<h4 id="attribute-information">Attribute Information:</h4>
+<h4 id="attribute-information">
+<a class="anchor" href="#attribute-information" aria-hidden="true"><span class="octicon octicon-link"></span></a>Attribute Information:</h4>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>symboling: -3, -2, -1, 0, 1, 2, 3
 normalized-losses: continuous from 65 to 256
 make: alfa-romero, audi, bmw, chevrolet, dodge, honda, isuzu, jaguar, mazda, mercedes-benz, mercury, mitsubishi, nissan, peugot, plymouth, porsche, renault, saab, subaru, toyota, volkswagen, volvo
@@ -142,7 +260,8 @@ highway-mpg: continuous from 16 to 54
 price: continuous from 5118 to 45400.
 </code></pre></div></div>
 
-<h2 id="data-acquisition">Data Acquisition</h2>
+<h2 id="data-acquisition">
+<a class="anchor" href="#data-acquisition" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Acquisition</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
@@ -1082,7 +1201,8 @@ dtype: object
 [205 rows x 26 columns]&gt;
 </code></pre></div></div>
 
-<h2 id="data-wrangling">Data Wrangling</h2>
+<h2 id="data-wrangling">
+<a class="anchor" href="#data-wrangling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Wrangling</h2>
 <p>Data Wrangling is the process of converting data from the initial format to a format that may be better for analysis.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># replace "?" with NaN
@@ -1503,22 +1623,23 @@ Name: price, dtype: int64
 
 <p>In this dataset, none of the columns are empty enough to drop entirely.</p>
 
-<p><strong>Replace by mean:</strong><br />
-“normalized-losses”: 41 missing data, replace them with mean<br />
-“bore”: 4 missing data, replace them with mean<br />
-“stroke”: 4 missing data, replace them with mean<br />
-“horsepower”: 2 missing data, replace them with mean<br />
+<p><strong>Replace by mean:</strong><br>
+“normalized-losses”: 41 missing data, replace them with mean<br>
+“bore”: 4 missing data, replace them with mean<br>
+“stroke”: 4 missing data, replace them with mean<br>
+“horsepower”: 2 missing data, replace them with mean<br>
 “peak-rpm”: 2 missing data, replace them with mean</p>
 
-<p><strong>Replace by frequency:</strong><br />
-“num-of-doors”: 2 missing data, replace them with “four”<br />
+<p><strong>Replace by frequency:</strong><br>
+“num-of-doors”: 2 missing data, replace them with “four”<br>
 Reason: 84% sedans are four-door. Since four doors is most frequent, it is most likely to occur</p>
 
-<p><strong>Drop the whole row:</strong><br />
-“price”: 4 missing data, simply delete the whole row<br />
+<p><strong>Drop the whole row:</strong><br>
+“price”: 4 missing data, simply delete the whole row<br>
 Reason: Price is what we want to predict. Any data entry without price data cannot be used for prediction; therefore any row now without price data is not useful to us.</p>
 
-<h5 id="replace-by-mean">Replace by mean</h5>
+<h5 id="replace-by-mean">
+<a class="anchor" href="#replace-by-mean" aria-hidden="true"><span class="octicon octicon-link"></span></a>Replace by mean</h5>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># normalized-losses column
 # calculate average of the column. astype('float') saves the mean value in float dtype.
@@ -1590,7 +1711,8 @@ Reason: Price is what we want to predict. Any data entry without price data cann
 </span><span class="n">df</span><span class="p">[</span><span class="s">'peak-rpm'</span><span class="p">].</span><span class="n">replace</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">avg_peakrpm</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h5 id="replace-by-frequency">Replace by Frequency</h5>
+<h5 id="replace-by-frequency">
+<a class="anchor" href="#replace-by-frequency" aria-hidden="true"><span class="octicon octicon-link"></span></a>Replace by Frequency</h5>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># identify which values are present in a particular column
 </span><span class="n">df</span><span class="p">[</span><span class="s">'num-of-doors'</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()</span>
@@ -1612,7 +1734,8 @@ Name: num-of-doors, dtype: int64
 </span><span class="n">df</span><span class="p">[</span><span class="s">'num-of-doors'</span><span class="p">].</span><span class="n">replace</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span> <span class="s">'four'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h5 id="drop-the-whole-row">Drop the whole row</h5>
+<h5 id="drop-the-whole-row">
+<a class="anchor" href="#drop-the-whole-row" aria-hidden="true"><span class="octicon octicon-link"></span></a>Drop the whole row</h5>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s">'price'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </code></pre></div></div>
@@ -1860,7 +1983,8 @@ price                float64
 dtype: object
 </code></pre></div></div>
 
-<h2 id="data-normalization">Data Normalization</h2>
+<h2 id="data-normalization">
+<a class="anchor" href="#data-normalization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Normalization</h2>
 <p>Normalization is the process of transforming values of several variables into a similar range. Typical normalizations include scaling the variable so the variable average is 0, scaling the variable so the variance is 1, or scaling variable so the variable values range from 0 to 1.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># scale the columns 'length', 'width' and 'height'
@@ -1930,7 +2054,8 @@ dtype: object
 </table>
 </div>
 
-<h3 id="binning">Binning</h3>
+<h3 id="binning">
+<a class="anchor" href="#binning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Binning</h3>
 <p>Binning is a process of transforming continuous numerical variables into discrete categorical ‘bins’, for grouped analysis.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'horsepower'</span><span class="p">].</span><span class="n">describe</span><span class="p">()</span>
@@ -1963,7 +2088,7 @@ Name: horsepower, dtype: float64
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Text(0.5, 1.0, 'horsepower bins')
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_40_1.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_40_1.png"></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s">'horsepower'</span><span class="p">]),</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s">'horsepower'</span><span class="p">]),</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">bins</span>
@@ -2081,9 +2206,10 @@ Name: horsepower-binned, dtype: int64
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Text(0.5, 1.0, 'horsepower bins')
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_45_1.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_45_1.png"></p>
 
-<h4 id="bins-visualization">Bins Visualization</h4>
+<h4 id="bins-visualization">
+<a class="anchor" href="#bins-visualization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bins Visualization</h4>
 <p>Normally, a histogram is used to visualize the distribution of bins.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
@@ -2104,9 +2230,10 @@ Name: horsepower-binned, dtype: int64
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Text(0.5, 1.0, 'horsepower bins')
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_47_1.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_47_1.png"></p>
 
-<h4 id="indicator-variable-or-dummy-variable">Indicator variable (or dummy variable)</h4>
+<h4 id="indicator-variable-or-dummy-variable">
+<a class="anchor" href="#indicator-variable-or-dummy-variable" aria-hidden="true"><span class="octicon octicon-link"></span></a>Indicator variable (or dummy variable)</h4>
 <p>An indicator variable (or dummy variable) is a numerical variable used to label categories. They are called ‘dummies’ because the numbers themselves don’t have inherent meaning.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'fuel-type'</span><span class="p">].</span><span class="n">unique</span><span class="p">()</span>
@@ -2500,17 +2627,20 @@ Name: horsepower-binned, dtype: int64
 <p>5 rows × 29 columns</p>
 </div>
 
-<h3 id="analyzing-individual-feature-patterns-using-visualization">Analyzing Individual Feature Patterns using Visualization</h3>
+<h3 id="analyzing-individual-feature-patterns-using-visualization">
+<a class="anchor" href="#analyzing-individual-feature-patterns-using-visualization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Analyzing Individual Feature Patterns using Visualization</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span> 
 </code></pre></div></div>
 
-<h4 id="continuous-numerical-variables">Continuous numerical variables</h4>
+<h4 id="continuous-numerical-variables">
+<a class="anchor" href="#continuous-numerical-variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Continuous numerical variables</h4>
 <p>Continuous numerical variables are variables that may contain any value within some range. Continuous numerical variables can have the type “int64” or “float64”. A great way to visualize these variables is by using scatterplots with fitted lines.</p>
 
-<h4 id="correlation">Correlation</h4>
+<h4 id="correlation">
+<a class="anchor" href="#correlation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Correlation</h4>
 <p>We can calculate the correlation between variables of type ‘int64’ or ‘float64’ using the method ‘corr’.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">corr</span><span class="p">()</span> 
@@ -3082,10 +3212,12 @@ Name: horsepower-binned, dtype: int64
 </table>
 </div>
 
-<h3 id="continuos-numerical-variables">Continuos numerical variables</h3>
+<h3 id="continuos-numerical-variables">
+<a class="anchor" href="#continuos-numerical-variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Continuos numerical variables</h3>
 <p>Continuous numerical variables are variables that may contain any value within some range. Continuous numerical variables can have the type “int64” or “float64”. A great way to visualize these variables is by using scatterplots with fitted lines.</p>
 
-<h5 id="positive-linear-relationship">Positive Linear Relationship</h5>
+<h5 id="positive-linear-relationship">
+<a class="anchor" href="#positive-linear-relationship" aria-hidden="true"><span class="octicon octicon-link"></span></a>Positive Linear Relationship</h5>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># engine size as potential predictor variable of price
 </span><span class="n">sns</span><span class="p">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">'engine-size'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">'price'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
@@ -3095,7 +3227,7 @@ Name: horsepower-binned, dtype: int64
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(0, 53229.620270856)
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_66_1.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_66_1.png"></p>
 
 <p>As the engine-size goes up, the price goes up: this indicates a positive direct correlation between these two variables. Engine size seems like a pretty good predictor of price since the regression line is almost a perfect diagonal line.</p>
 
@@ -3183,7 +3315,8 @@ Name: horsepower-binned, dtype: int64
 </table>
 </div>
 
-<h5 id="weak-linear-relationship">Weak Linear Relationship</h5>
+<h5 id="weak-linear-relationship">
+<a class="anchor" href="#weak-linear-relationship" aria-hidden="true"><span class="octicon octicon-link"></span></a>Weak Linear Relationship</h5>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># relationship between peak-rpm and price
 </span><span class="n">sns</span><span class="p">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">'peak-rpm'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">'price'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
@@ -3192,7 +3325,7 @@ Name: horsepower-binned, dtype: int64
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d19ad7bef0&gt;
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_72_1.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_72_1.png"></p>
 
 <p>Peak rpm does not seem like a good predictor of the price at all since the regression line is close to horizontal. Also, the data points are very scattered and far from the fitted line, showing lots of variability. Therefore it’s it is not a reliable variable.</p>
 
@@ -3237,7 +3370,8 @@ Name: horsepower-binned, dtype: int64
 </table>
 </div>
 
-<h3 id="categorical-variables">Categorical variables</h3>
+<h3 id="categorical-variables">
+<a class="anchor" href="#categorical-variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Categorical variables</h3>
 <p>These are variables that describe a ‘characteristic’ of a data unit, and are selected from a small group of categories. The categorical variables can have the type “object” or “int64”. A good way to visualize categorical variables is by using boxplots.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># relationship between body-style and price
@@ -3247,7 +3381,7 @@ Name: horsepower-binned, dtype: int64
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d19bfe7c88&gt;
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_76_1.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_76_1.png"></p>
 
 <p>We see that the distributions of price between the different body-style categories have a significant overlap, and so body-style would not be a good predictor of price.</p>
 
@@ -3258,7 +3392,7 @@ Name: horsepower-binned, dtype: int64
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d19c0b2320&gt;
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_78_1.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_78_1.png"></p>
 
 <p>We see that the distribution of price between these two engine-location categories, front and rear, are distinct enough to take engine-location as a potential good predictor of price.</p>
 
@@ -3269,11 +3403,12 @@ Name: horsepower-binned, dtype: int64
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1d19c125f98&gt;
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_80_1.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_80_1.png"></p>
 
 <p>We see that the distribution of price between the different drive-wheels categories differs; as such, drive-wheels could potentially be a predictor of price.</p>
 
-<h3 id="descriptive-statistical-analysis">Descriptive Statistical Analysis</h3>
+<h3 id="descriptive-statistical-analysis">
+<a class="anchor" href="#descriptive-statistical-analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Descriptive Statistical Analysis</h3>
 <p>The <strong>describe</strong> function automatically computes basic statistics for all continuous variables. Any NaN values are automatically skipped in these statistics.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">describe</span><span class="p">()</span>
@@ -3779,7 +3914,8 @@ Name: drive-wheels, dtype: int64
 
 <p>The value counts of the engine location would not be a good predictor variable for the price. This is because we only have 3 cars with a rear engine and 198 with an engine in the front; this result is skewed. Thus, we are not able to draw any conclusions about the engine location.</p>
 
-<h3 id="grouping">Grouping</h3>
+<h3 id="grouping">
+<a class="anchor" href="#grouping" aria-hidden="true"><span class="octicon octicon-link"></span></a>Grouping</h3>
 <p>The ‘groupby’ method groups data by different categories. The data is grouped based on one or several variables and analysis is performed on the individual groups.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># categories of drive wheels
@@ -4177,7 +4313,7 @@ Name: drive-wheels, dtype: int64
 <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_105_0.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_105_0.png"></p>
 
 <p>The heatmap plots the target variable (price) proportional to colour with respect to the variables ‘drive-wheel’ and ‘body-style’ in the vertical and horizontal axis respectively. This allows us to visualize how the price is related to ‘drive-wheel’ and ‘body-style’.</p>
 
@@ -4203,9 +4339,10 @@ Name: drive-wheels, dtype: int64
 <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_107_0.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_107_0.png"></p>
 
-<h3 id="correlation-and-causation">Correlation and Causation</h3>
+<h3 id="correlation-and-causation">
+<a class="anchor" href="#correlation-and-causation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Correlation and Causation</h3>
 <p><strong>Correlation</strong>: a measure of the extent of interdependence between variables.</p>
 
 <p><strong>Causation</strong>: the relationship between cause and effect between two variables.</p>
@@ -4753,7 +4890,7 @@ Name: drive-wheels, dtype: int64
        162.        , 134.        , 106.        ])
 </code></pre></div></div>
 
-<p>To know the significance of the correlation estimate, we calculate the P-value.<br />
+<p>To know the significance of the correlation estimate, we calculate the P-value.<br>
 The P-value is the probability value that the correlation between these two variables is statistically significant. Normally, we choose a significance level of 0.05, which means that we are 95% confident that the correlation between the variables is significant.</p>
 
 <p>By convention, when the</p>
@@ -4857,7 +4994,8 @@ The P-value is the probability value that the correlation between these two vari
 
 <p>Since the p-value is &lt; 0.001, the correlation between highway-mpg and price is statistically significant, and the coefficient of ~ -0.705 shows that the relationship is negative and moderately strong.</p>
 
-<h3 id="anova-analyis-of-variance">ANOVA (Analyis of Variance)</h3>
+<h3 id="anova-analyis-of-variance">
+<a class="anchor" href="#anova-analyis-of-variance" aria-hidden="true"><span class="octicon octicon-link"></span></a>ANOVA (Analyis of Variance)</h3>
 <p>The Analysis of Variance (ANOVA) is a statistical method used to test whether there are significant differences between the means of two or more groups. ANOVA returns two parameters:</p>
 
 <p><strong>F-test score</strong>: ANOVA assumes the means of all groups are the same, calculates how much the actual means deviate from the assumption, and reports it as the F-test score. A larger score means there is a larger difference between the means.</p>
@@ -5078,7 +5216,8 @@ Name: price, dtype: float64
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ANOVA results: F= 0.665465750252303 , P = 0.41620116697845666
 </code></pre></div></div>
 
-<h4 id="conclusion-important-variables">Conclusion: Important Variables</h4>
+<h4 id="conclusion-important-variables">
+<a class="anchor" href="#conclusion-important-variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion: Important Variables</h4>
 
 <p>We now have a better idea of what our data looks like and which variables are important to take into account when predicting the car price. We have narrowed it down to the following variables:</p>
 
@@ -5100,7 +5239,8 @@ Bore
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Drive-wheels
 </code></pre></div></div>
 
-<h2 id="model-development">Model Development</h2>
+<h2 id="model-development">
+<a class="anchor" href="#model-development" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model Development</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># path of data 
 </span><span class="n">df</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
@@ -5273,9 +5413,11 @@ Bore
 <p>5 rows × 29 columns</p>
 </div>
 
-<h3 id="linear-regression-and-multiple-linear-regression">Linear Regression and Multiple Linear Regression</h3>
+<h3 id="linear-regression-and-multiple-linear-regression">
+<a class="anchor" href="#linear-regression-and-multiple-linear-regression" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linear Regression and Multiple Linear Regression</h3>
 
-<h3 id="simple-linear-regression">Simple Linear Regression</h3>
+<h3 id="simple-linear-regression">
+<a class="anchor" href="#simple-linear-regression" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simple Linear Regression</h3>
 <p>Simple Linear Regression is a method to help us understand the relationship between two variables:</p>
 <ul>
   <li>The predictor/independent variable (X)</li>
@@ -5284,7 +5426,7 @@ Bore
 
 <p>The result of Linear Regression is a linear function that predicts the response (dependent) variable as a function of the predictor (independent) variable.</p>
 
-<p>Y: Response Variable<br />
+<p>Y: Response Variable<br>
 X: Predictor Varaible</p>
 
 <p>Linear function:
@@ -5298,7 +5440,8 @@ X: Predictor Varaible</p>
 </span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
 </code></pre></div></div>
 
-<h6 id="how-can-highway-mpg-help-predict-the-price">How can highway-mpg help predict the price?</h6>
+<h6 id="how-can-highway-mpg-help-predict-the-price">
+<a class="anchor" href="#how-can-highway-mpg-help-predict-the-price" aria-hidden="true"><span class="octicon octicon-link"></span></a>How can highway-mpg help predict the price?</h6>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># create the linear regression object
 </span><span class="n">lm</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
@@ -5341,10 +5484,11 @@ X: Predictor Varaible</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([-821.73337832])
 </code></pre></div></div>
 
-<p>Final estimated linear model:<br />
+<p>Final estimated linear model:<br>
 price = 38423.31 - 821.73 * highway-mpg</p>
 
-<h6 id="how-can-engine-size-help-predict-the-price">How can engine size help predict the price?</h6>
+<h6 id="how-can-engine-size-help-predict-the-price">
+<a class="anchor" href="#how-can-engine-size-help-predict-the-price" aria-hidden="true"><span class="octicon octicon-link"></span></a>How can engine size help predict the price?</h6>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s">'engine-size'</span><span class="p">]]</span>
 <span class="n">Y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'price'</span><span class="p">]</span>
@@ -5379,12 +5523,13 @@ price = 38423.31 - 821.73 * highway-mpg</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([166.86001569])
 </code></pre></div></div>
 
-<p>Final estimated linear model:<br />
+<p>Final estimated linear model:<br>
 Price = -7963.34 + 166.86 * Engine-size</p>
 
-<h3 id="multiple-linear-regression">Multiple Linear Regression</h3>
+<h3 id="multiple-linear-regression">
+<a class="anchor" href="#multiple-linear-regression" aria-hidden="true"><span class="octicon octicon-link"></span></a>Multiple Linear Regression</h3>
 
-<p>If we want to use more variables in our model to predict car price, we can use Multiple Linear Regression.<br />
+<p>If we want to use more variables in our model to predict car price, we can use Multiple Linear Regression.<br>
 This method is used to explain the relationship between one continuous response (dependent) variable and two or more predictor (independent) variables. Most of the real-world regression models involve multiple predictors.</p>
 
 <p><em>𝑌ℎ𝑎𝑡 = 𝑎 + 𝑏1𝑋1 + 𝑏2𝑋2 + 𝑏3𝑋3 + 𝑏4𝑋4</em></p>
@@ -5423,7 +5568,7 @@ This method is used to explain the relationship between one continuous response 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([53.49574423,  4.70770099, 81.53026382, 36.05748882])
 </code></pre></div></div>
 
-<p>Final estimated linear model:<br />
+<p>Final estimated linear model:<br>
 Price = -15678.74 + 52.65851272 * horsepower + 4.699 * curb-weight + 81.96 * engine-size + 33.58 * highway-mpg</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># use two other predictor variables
@@ -5447,17 +5592,19 @@ Price = -15678.74 + 52.65851272 * horsepower + 4.699 * curb-weight + 81.96 * eng
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([   1.49789586, -820.45434016])
 </code></pre></div></div>
 
-<p>Final estimated linear model:<br />
+<p>Final estimated linear model:<br>
 Price = 38201.31 + 1.498 * normalized-losses - 820.45 * highway-mpg</p>
 
-<h2 id="model-evaluation-using-visualization">Model Evaluation using Visualization</h2>
+<h2 id="model-evaluation-using-visualization">
+<a class="anchor" href="#model-evaluation-using-visualization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model Evaluation using Visualization</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># import the visualization package: seaborn
 </span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 </code></pre></div></div>
 
-<h3 id="regression-plot-for-simple-linear-regression">Regression Plot for Simple Linear Regression</h3>
+<h3 id="regression-plot-for-simple-linear-regression">
+<a class="anchor" href="#regression-plot-for-simple-linear-regression" aria-hidden="true"><span class="octicon octicon-link"></span></a>Regression Plot for Simple Linear Regression</h3>
 <p>This plot will show a combination of a scattered data points (a scatter plot), as well as the fitted linear regression line going through the data. This will give us a reasonable estimate of the relationship between the two variables, the strength of the correlation, as well as the direction (positive or negative correlation).</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># visualize highway-mpg as a potential predictor of price
@@ -5471,7 +5618,7 @@ Price = 38201.31 + 1.498 * normalized-losses - 820.45 * highway-mpg</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(0, 48163.464897503036)
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_176_1.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_176_1.png"></p>
 
 <p>We can see from this plot that price is negatively correlated to highway-mpg, since the regression slope is negative. One thing to keep in mind when looking at a regression plot is to pay attention to how scattered the data points are around the regression line. This will give you a good indication of the variance of the data, and whether a linear model would be the best fit or not. If the data is too far off from the line, this linear model might not be the best model for this data.</p>
 
@@ -5484,7 +5631,7 @@ Price = 38201.31 + 1.498 * normalized-losses - 820.45 * highway-mpg</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(0, 47414.10667770421)
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_178_1.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_178_1.png"></p>
 
 <p>Comparing the regression plot of “peak-rpm” and “highway-mpg” we see that the points for “highway-mpg” are much closer to the generated line and on the average decrease. The points for “peak-rpm” have more spread around the predicted line, and it is much harder to determine if the points are decreasing or increasing as the “highway-mpg” increases.</p>
 
@@ -5540,7 +5687,8 @@ Price = 38201.31 + 1.498 * normalized-losses - 820.45 * highway-mpg</p>
 
 <p>As we can see, highway-mpg is more strongly correlated with price as compared to peak-rpm.</p>
 
-<h5 id="residual-plot-to-visualize-variance-of-data">Residual Plot to visualize variance of data</h5>
+<h5 id="residual-plot-to-visualize-variance-of-data">
+<a class="anchor" href="#residual-plot-to-visualize-variance-of-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Residual Plot to visualize variance of data</h5>
 
 <p>The difference between the observed value (y) and the predicted value (Yhat) is called the residual (e). When we look at a regression plot, the residual is the distance from the data point to the fitted regression line.</p>
 
@@ -5560,12 +5708,13 @@ Price = 38201.31 + 1.498 * normalized-losses - 820.45 * highway-mpg</p>
 <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_183_0.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_183_0.png"></p>
 
 <p>We can see from this residual plot that the residuals are not randomly spread around the x-axis, which leads us to believe that maybe a non-linear model is more appropriate for this data.</p>
 
-<h3 id="distribution-plot-for-multiple-linear-regression">Distribution Plot for Multiple Linear Regression</h3>
-<p>You cannot visualize Multiple Linear Regression with a regression or residual plot.<br />
+<h3 id="distribution-plot-for-multiple-linear-regression">
+<a class="anchor" href="#distribution-plot-for-multiple-linear-regression" aria-hidden="true"><span class="octicon octicon-link"></span></a>Distribution Plot for Multiple Linear Regression</h3>
+<p>You cannot visualize Multiple Linear Regression with a regression or residual plot.<br>
 One way to look at the fit of the model is by looking at the distribution plot. We can look at the distribution of the fitted values that result from the model and compare it to the distribution of the actual values.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># develop a model using these variables as the predictor variables
@@ -5596,21 +5745,22 @@ One way to look at the fit of the model is by looking at the distribution plot. 
 <span class="n">plt</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_189_0.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_189_0.png"></p>
 
 <p>We can see that the fitted values are reasonably close to the actual values, since the two distributions overlap a bit. However, there is definitely some room for improvement.</p>
 
-<h2 id="polynomial-regression-and-pipelines">Polynomial Regression and Pipelines</h2>
-<p>Polynomial regression is a particular case of the general linear regression model or multiple linear regression models.<br />
+<h2 id="polynomial-regression-and-pipelines">
+<a class="anchor" href="#polynomial-regression-and-pipelines" aria-hidden="true"><span class="octicon octicon-link"></span></a>Polynomial Regression and Pipelines</h2>
+<p>Polynomial regression is a particular case of the general linear regression model or multiple linear regression models.<br>
 We get non-linear relationships by squaring or setting higher-order terms of the predictor variables.</p>
 
 <p>There are different orders of polynomial regression:</p>
 <ul>
-  <li>Quadratic - 2nd order<br />
+  <li>Quadratic - 2nd order<br>
 𝑌ℎ𝑎𝑡=𝑎+𝑏1𝑋2+𝑏2𝑋2</li>
-  <li>Cubic - 3rd order<br />
+  <li>Cubic - 3rd order<br>
 𝑌ℎ𝑎𝑡=𝑎+𝑏1𝑋2+𝑏2𝑋2+𝑏3𝑋3</li>
-  <li>Higher order:<br />
+  <li>Higher order:<br>
 𝑌=𝑎+𝑏1𝑋2+𝑏2𝑋2+𝑏3𝑋3….</li>
 </ul>
 
@@ -5655,7 +5805,7 @@ We get non-linear relationships by squaring or setting higher-order terms of the
 </span><span class="n">PlotPolly</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">'highway-mpg'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_195_0.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_195_0.png"></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </code></pre></div></div>
@@ -5680,11 +5830,12 @@ We get non-linear relationships by squaring or setting higher-order terms of the
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PlotPolly</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">'highway-mpg'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_199_0.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_199_0.png"></p>
 
 <p>We see that by using very high order polynomials, overfitting is observed.</p>
 
-<h3 id="multivariate-polynomial-function">Multivariate Polynomial Function</h3>
+<h3 id="multivariate-polynomial-function">
+<a class="anchor" href="#multivariate-polynomial-function" aria-hidden="true"><span class="octicon octicon-link"></span></a>Multivariate Polynomial Function</h3>
 <p>The analytical expression for Multivariate Polynomial function gets complicated. For example, the expression for a second-order (degree=2)polynomial with two variables is given by:</p>
 
 <p>𝑌ℎ𝑎𝑡=𝑎+𝑏1𝑋1+𝑏2𝑋2+𝑏3𝑋1𝑋2+𝑏4𝑋21+𝑏5𝑋22</p>
@@ -5719,7 +5870,8 @@ We get non-linear relationships by squaring or setting higher-order terms of the
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(201, 15)
 </code></pre></div></div>
 
-<h3 id="pipeline">Pipeline</h3>
+<h3 id="pipeline">
+<a class="anchor" href="#pipeline" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pipeline</h3>
 <p>Data Pipelines simplify the steps of processing the data.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
@@ -5774,7 +5926,8 @@ We get non-linear relationships by squaring or setting higher-order terms of the
        17974.49032347, 10510.56542385])
 </code></pre></div></div>
 
-<h2 id="measures-for-in-sample-evaluation">Measures for In-Sample Evaluation</h2>
+<h2 id="measures-for-in-sample-evaluation">
+<a class="anchor" href="#measures-for-in-sample-evaluation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Measures for In-Sample Evaluation</h2>
 <p>When evaluating our models, not only do we want to visualize the results, but we also want a quantitative measure to determine how accurate the model is.</p>
 
 <p>Two very important measures that are often used in Statistics to determine the accuracy of a model are:</p>
@@ -5787,7 +5940,8 @@ We get non-linear relationships by squaring or setting higher-order terms of the
 
 <p><strong>Mean Squared Error (MSE):</strong> The Mean Squared Error measures the average of the squares of errors, that is, the difference between actual value (y) and the estimated value (ŷ).</p>
 
-<h3 id="model-1-simple-linear-regression">Model 1: Simple Linear Regression</h3>
+<h3 id="model-1-simple-linear-regression">
+<a class="anchor" href="#model-1-simple-linear-regression" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model 1: Simple Linear Regression</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s">'highway-mpg'</span><span class="p">]]</span>
 <span class="n">Y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'price'</span><span class="p">]</span>
@@ -5820,7 +5974,8 @@ We get non-linear relationships by squaring or setting higher-order terms of the
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The mean square error of price and predicted value is:  31635042.944639895
 </code></pre></div></div>
 
-<h3 id="model-2-multiple-linear-regression">Model 2: Multiple Linear Regression</h3>
+<h3 id="model-2-multiple-linear-regression">
+<a class="anchor" href="#model-2-multiple-linear-regression" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model 2: Multiple Linear Regression</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># fit the model
 </span><span class="n">lm</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s">'price'</span><span class="p">])</span>
@@ -5844,7 +5999,8 @@ We get non-linear relationships by squaring or setting higher-order terms of the
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The mean square error of price and predicted value using multifit is:  11980366.87072649
 </code></pre></div></div>
 
-<h4 id="model-3-polynomial-fit">Model 3: Polynomial Fit</h4>
+<h4 id="model-3-polynomial-fit">
+<a class="anchor" href="#model-3-polynomial-fit" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model 3: Polynomial Fit</h4>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># import the module
 </span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
@@ -5867,8 +6023,10 @@ We get non-linear relationships by squaring or setting higher-order terms of the
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>20474146.426361218
 </code></pre></div></div>
 
-<h2 id="prediction-and-decision-making">Prediction and Decision Making</h2>
-<h4 id="prediction">Prediction</h4>
+<h2 id="prediction-and-decision-making">
+<a class="anchor" href="#prediction-and-decision-making" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prediction and Decision Making</h2>
+<h4 id="prediction">
+<a class="anchor" href="#prediction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prediction</h4>
 <p>We trained the model using fit. Now we will use the method ‘predict’ to produce a prediction.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -5902,9 +6060,10 @@ We get non-linear relationships by squaring or setting higher-order terms of the
 <span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_234_0.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_234_0.png"></p>
 
-<h3 id="decision-making-determing-a-good-model-fit">Decision Making: Determing a Good Model Fit</h3>
+<h3 id="decision-making-determing-a-good-model-fit">
+<a class="anchor" href="#decision-making-determing-a-good-model-fit" aria-hidden="true"><span class="octicon octicon-link"></span></a>Decision Making: Determing a Good Model Fit</h3>
 <p>Now that we have visualized the different models, and generated the R-squared and MSE values for the fits, how do we determine a good model fit?</p>
 
 <p>What is a good R-squared value?
@@ -5913,7 +6072,8 @@ When comparing models, the model with the higher R-squared value is a better fit
 <p>What is a good MSE?
 When comparing models, the model with the smallest MSE value is a better fit for the data.</p>
 
-<h4 id="lets-take-a-look-at-the-values-for-the-different-models">Let’s take a look at the values for the different models.</h4>
+<h4 id="lets-take-a-look-at-the-values-for-the-different-models">
+<a class="anchor" href="#lets-take-a-look-at-the-values-for-the-different-models" aria-hidden="true"><span class="octicon octicon-link"></span></a>Let’s take a look at the values for the different models.</h4>
 
 <p>Simple Linear Regression: Using Highway-mpg as a Predictor Variable of Price.</p>
 <ul>
@@ -5933,33 +6093,44 @@ When comparing models, the model with the smallest MSE value is a better fit for
   <li>MSE: 2.05 x 10^7</li>
 </ul>
 
-<h4 id="simple-linear-regression-model-slr-vs-multiple-linear-regression-model-mlr">Simple Linear Regression model (SLR) vs Multiple Linear Regression model (MLR)</h4>
-<p>Usually, the more variables you have, the better your model is at predicting, but this is not always true. Sometimes you may not have enough data, you may run into numerical problems, or many of the variables may not be useful and or even act as noise. As a result, you should always check the MSE and R^2.<br />
+<h4 id="simple-linear-regression-model-slr-vs-multiple-linear-regression-model-mlr">
+<a class="anchor" href="#simple-linear-regression-model-slr-vs-multiple-linear-regression-model-mlr" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simple Linear Regression model (SLR) vs Multiple Linear Regression model (MLR)</h4>
+<p>Usually, the more variables you have, the better your model is at predicting, but this is not always true. Sometimes you may not have enough data, you may run into numerical problems, or many of the variables may not be useful and or even act as noise. As a result, you should always check the MSE and R^2.<br>
 So to be able to compare the results of the MLR vs SLR models, we look at a combination of both the R-squared and MSE to make the best conclusion about the fit of the model.</p>
 
 <ul>
-  <li><strong>MSE:</strong> The MSE of SLR is 3.16x10^7 while MLR has an MSE of 1.2 x10^7. The MSE of MLR is much smaller.</li>
-  <li><strong>R-squared:</strong> In this case, we can also see that there is a big difference between the R-squared of the SLR and the R-squared of the MLR. The R-squared for the SLR (0.497) is very small compared to the R-squared for the MLR (0.809).<br />
+  <li>
+<strong>MSE:</strong> The MSE of SLR is 3.16x10^7 while MLR has an MSE of 1.2 x10^7. The MSE of MLR is much smaller.</li>
+  <li>
+<strong>R-squared:</strong> In this case, we can also see that there is a big difference between the R-squared of the SLR and the R-squared of the MLR. The R-squared for the SLR (0.497) is very small compared to the R-squared for the MLR (0.809).<br>
 This R-squared in combination with the MSE show that MLR seems like the better model fit in this case, compared to SLR.</li>
 </ul>
 
-<h4 id="simple-linear-model-slr-vs-polynomial-fit">Simple Linear Model (SLR) vs Polynomial Fit</h4>
+<h4 id="simple-linear-model-slr-vs-polynomial-fit">
+<a class="anchor" href="#simple-linear-model-slr-vs-polynomial-fit" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simple Linear Model (SLR) vs Polynomial Fit</h4>
 <ul>
-  <li><strong>MSE:</strong> We can see that Polynomial Fit brought down the MSE, since this MSE is smaller than the one from the SLR.</li>
-  <li><strong>R-squared:</strong> The R-squared for the Polyfit is larger than the R-squared for the SLR, so the Polynomial Fit also brought up the R-squared quite a bit.<br />
+  <li>
+<strong>MSE:</strong> We can see that Polynomial Fit brought down the MSE, since this MSE is smaller than the one from the SLR.</li>
+  <li>
+<strong>R-squared:</strong> The R-squared for the Polyfit is larger than the R-squared for the SLR, so the Polynomial Fit also brought up the R-squared quite a bit.<br>
 Since the Polynomial Fit resulted in a lower MSE and a higher R-squared, we can conclude that this was a better fit model than the simple linear regression for predicting Price with Highway-mpg as a predictor variable.</li>
 </ul>
 
-<h4 id="multiple-linear-regression-mlr-vs-polynomial-fit">Multiple Linear Regression (MLR) vs Polynomial Fit</h4>
+<h4 id="multiple-linear-regression-mlr-vs-polynomial-fit">
+<a class="anchor" href="#multiple-linear-regression-mlr-vs-polynomial-fit" aria-hidden="true"><span class="octicon octicon-link"></span></a>Multiple Linear Regression (MLR) vs Polynomial Fit</h4>
 <ul>
-  <li><strong>MSE:</strong> The MSE for the MLR is smaller than the MSE for the Polynomial Fit.</li>
-  <li><strong>R-squared:</strong> The R-squared for the MLR is also much larger than for the Polynomial Fit.</li>
+  <li>
+<strong>MSE:</strong> The MSE for the MLR is smaller than the MSE for the Polynomial Fit.</li>
+  <li>
+<strong>R-squared:</strong> The R-squared for the MLR is also much larger than for the Polynomial Fit.</li>
 </ul>
 
-<h4 id="conclusion">Conclusion:</h4>
+<h4 id="conclusion">
+<a class="anchor" href="#conclusion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion:</h4>
 <p>Comparing these three models, we conclude that <strong>the MLR model is the best model</strong> to be able to predict price from our dataset. This result makes sense, since we have 27 variables in total, and we know that more than one of those variables are potential predictors of the final car price.</p>
 
-<h2 id="model-evaluation-and-refinement">Model Evaluation and Refinement</h2>
+<h2 id="model-evaluation-and-refinement">
+<a class="anchor" href="#model-evaluation-and-refinement" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model Evaluation and Refinement</h2>
 <p>We have built models and made predictions of vehicle prices. Now we will determine how accurate these predictions are.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
@@ -6153,7 +6324,8 @@ Since the Polynomial Fit resulted in a lower MSE and a higher R-squared, we can 
   "`IPython.html.widgets` has moved to `ipywidgets`.", ShimWarning)
 </code></pre></div></div>
 
-<h4 id="functions-for-plotting">Functions for Plotting</h4>
+<h4 id="functions-for-plotting">
+<a class="anchor" href="#functions-for-plotting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions for Plotting</h4>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">DistributionPlot</span><span class="p">(</span><span class="n">RedFunction</span><span class="p">,</span> <span class="n">BlueFunction</span><span class="p">,</span> <span class="n">RedName</span><span class="p">,</span> <span class="n">BlueName</span><span class="p">,</span> <span class="n">Title</span><span class="p">):</span>
   <span class="n">width</span> <span class="o">=</span> <span class="mi">12</span>
@@ -6191,7 +6363,8 @@ Since the Polynomial Fit resulted in a lower MSE and a higher R-squared, we can 
   <span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">()</span>
 </code></pre></div></div>
 
-<h3 id="training-and-testing">Training and Testing</h3>
+<h3 id="training-and-testing">
+<a class="anchor" href="#training-and-testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Training and Testing</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># place target data 'price' in a seaparate dataframe y
 </span><span class="n">y_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'price'</span><span class="p">]</span>
@@ -6246,7 +6419,8 @@ number of training samples:  180
 
 <p>We can see that the R^2 is much smaller using the test data.</p>
 
-<h3 id="cross-validation-score">Cross-Validation Score</h3>
+<h3 id="cross-validation-score">
+<a class="anchor" href="#cross-validation-score" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cross-Validation Score</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># import the module
 </span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
@@ -6289,7 +6463,8 @@ number of training samples:  180
        14762.35027598])
 </code></pre></div></div>
 
-<h3 id="overfitting-underfitting-and-model-selection">Overfitting, Underfitting and Model Selection</h3>
+<h3 id="overfitting-underfitting-and-model-selection">
+<a class="anchor" href="#overfitting-underfitting-and-model-selection" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overfitting, Underfitting and Model Selection</h3>
 <p>It turns out that the test data sometimes referred to as the out of sample data is a much better measure of how well your model performs in the real world. One reason for this is overfitting; let’s go over some examples. It turns out these differences are more apparent in Multiple Linear Regression and Polynomial Regression so we will explore overfitting in that context.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># create MLR objects and train the model
@@ -6331,7 +6506,7 @@ number of training samples:  180
 <span class="n">DistributionPlot</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_hat_train</span><span class="p">,</span> <span class="s">'Actual Values (Train)'</span><span class="p">,</span> <span class="s">'Predicted Values (Train)'</span><span class="p">,</span> <span class="n">Title</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_268_0.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_268_0.png"></p>
 
 <p>Figure 1: Plot of predicted values using the training data compared to the training data.</p>
 
@@ -6342,11 +6517,11 @@ number of training samples:  180
 <span class="n">DistributionPlot</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_hat_test</span><span class="p">,</span> <span class="s">'Actual Values (Test)'</span><span class="p">,</span> <span class="s">'Predicted Values (Test)'</span><span class="p">,</span> <span class="n">Title</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_271_0.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_271_0.png"></p>
 
 <p>Figure 2: Plot of predicted value using the test data compared to the test data.</p>
 
-<p>When the model generates new values from the test data, we see the distribution of the predicted values is much different from the actual target values.<br />
+<p>When the model generates new values from the test data, we see the distribution of the predicted values is much different from the actual target values.<br>
 Comparing Figure 1 and Figure 2, it is evident the distribution of the training data in Figure 1 is much better at fitting the data. This difference in Figure 2 is apparent where the ranges are from 5000 to 15000. This is where the distribution shape is exceptionally different.</p>
 
 <p>Let’s see if polynomial regression also exhibits a drop in the prediction accuracy when analysing the test dataset.</p>
@@ -6354,7 +6529,8 @@ Comparing Figure 1 and Figure 2, it is evident the distribution of the training 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">PolynomialFeatures</span>
 </code></pre></div></div>
 
-<h3 id="overfitting">Overfitting</h3>
+<h3 id="overfitting">
+<a class="anchor" href="#overfitting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overfitting</h3>
 <p>Overfitting occurs when the model fits the noise, not the underlying process. Therefore when testing your model using the test-set, your model does not perform as well as it is modelling noise, not the underlying process that generated the relationship.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># use 45% of the data for testing and the rest for training
@@ -6404,7 +6580,7 @@ True values [ 6295. 10698. 13860. 13499.]
 </span><span class="n">PollyPlot</span><span class="p">(</span><span class="n">x_train</span><span class="p">[[</span><span class="s">'horsepower'</span><span class="p">]],</span> <span class="n">x_test</span><span class="p">[[</span><span class="s">'horsepower'</span><span class="p">]],</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">poly</span><span class="p">,</span> <span class="n">pr</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_282_0.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_282_0.png"></p>
 
 <p>Figure 3: A polynomial regression model; red dots represent training data, green dots represent test data, and the blue line represents the model prediction.</p>
 
@@ -6447,7 +6623,7 @@ True values [ 6295. 10698. 13860. 13499.]
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Text(3, 0.75, 'Maximum R^2 ')
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_289_1.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_289_1.png"></p>
 
 <p>We see the R^2 gradually increases until an order three polynomial is used. Then the R^2 dramatically decreases at four.</p>
 
@@ -6475,7 +6651,8 @@ True values [ 6295. 10698. 13860. 13499.]
 &lt;function __main__.f(order, test_data)&gt;
 </code></pre></div></div>
 
-<h3 id="ridge-regression">Ridge Regression</h3>
+<h3 id="ridge-regression">
+<a class="anchor" href="#ridge-regression" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ridge Regression</h3>
 <p>Review Ridge Regression, see how the parameter Alpha changes the model. Our test data will be used as validation data.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># perform a degree 2 polynomial transformation on our data
@@ -6548,11 +6725,12 @@ test set: [ 6295. 10698. 13860. 13499.]
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;matplotlib.legend.Legend at 0x1d19ca7f780&gt;
 </code></pre></div></div>
 
-<p><img src="/assets/img/dataAnalysisWithPython/output_303_1.png" /></p>
+<p><img src="/assets/img/dataAnalysisWithPython/output_303_1.png"></p>
 
 <p>Figure 6: The blue line represents the R^2 of the test data, and the red line represents the R^2 of the training data. The x-axis represents the different values of Alpha.</p>
 
-<h3 id="grid-search">Grid Search</h3>
+<h3 id="grid-search">
+<a class="anchor" href="#grid-search" aria-hidden="true"><span class="octicon octicon-link"></span></a>Grid Search</h3>
 <p>The term Alpha is a hyperparameter; sklearn has the class GridSearchCV to make the process of finding the best hyperparameter simpler.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># import GridSearchCV from the module model_selection
@@ -6624,7 +6802,15 @@ test set: [ 6295. 10698. 13860. 13499.]
 </code></pre></div></div>
 
 
-  </div><a class="u-url" href="/ai/2019/09/05/Data-Analyis-With-Python.html" hidden></a>
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="pshirole/ai"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/ai/visualization/analysis/machine%20learning/2019/09/05/Data-Analyis-With-Python.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
