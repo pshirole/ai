@@ -4,7 +4,7 @@ description: Data analysis of an automobile dataset using various techniques.
 layout: post
 toc: true
 comments: true
-<!-- image: images/some_folder/your_image.png -->
+image: images/some_folder/your_image.png
 hide: false
 search_exclude: true
 categories: [visualization, analysis, machine learning]
