@@ -2007,7 +2007,9 @@ plt.pyplot.title("horsepower bins")
 
 <!-- <img src="/assets/img/dataAnalysisWithPython/output_40_1.png"> -->
 
-![]({{ https://pshirole.github.io/ai/ }}/images/dataAnalysisWithPython/output_40_1.png)
+![]({{https://pshirole.github.io/ai/}}/images/dataAnalysisWithPython/output_40_1.png)
+![]({{site.baseurl}}/images/diagram.png "https://github.com/fastai/fastpages")
+![]({{site.baseurl}}/images/dataAnalysisWithPython/output_40_1.png)
 
 
 
